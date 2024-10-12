@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '../fonts/general-sans.css';
+
+:root {
+  --AccentDark: #0A0A0B;
+  --AccentBright: #E5E6E8;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --AccentDark: #E5E6E8;
+    --AccentBright: #0A0A0B;
+  }
+} */
+
+body {
+  color: var(--AccentDark);
+  background: var(--AccentBright);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
