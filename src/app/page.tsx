@@ -1,7 +1,9 @@
-import { Main, Nav } from "@/app/component/Layouts";
+import { Footer, Main } from "@/app/component/Layouts";
 import { Hero } from "@/app/component/Hero";
 import { About } from "@/app/component/About";
-import { Landscape } from "./component/Landscape";
+import { Landscape } from "@/app/component/Landscape";
+import { Archive } from "@/app/component/Archive";
+import { Services } from "@/app/component/Services";
 
 export default function Home() {
   return (
@@ -9,13 +11,9 @@ export default function Home() {
       <Hero />
       <About />
       <Landscape />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-
+      <Archive />
+      <Services />
+      <Footer />
     </Main>
   );
 }

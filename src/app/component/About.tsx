@@ -1,6 +1,6 @@
 export const About = () => {
 
-    return <div className="flex flex-row gap-4 p-12">
+    return <div id="About" className="flex flex-row gap-4 p-12">
         <h1 className="text-[40px] font-medium leading-[115%] w-full">
             Creating stunning, functional, and affordable designs, we bring your unique vision to life with excellence and creativity.</h1>
         <div className="flex flex-col justify-between gap-96 w-full">

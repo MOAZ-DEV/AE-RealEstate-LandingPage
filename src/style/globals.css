@@ -4,9 +4,14 @@
 
 @import '../fonts/general-sans.css';
 
+*{
+  scroll-behavior: smooth;
+}
+
 :root {
   --AccentDark: #0A0A0B;
   --AccentBright: #E5E6E8;
+  --AccentOrganicGray: #2A292E;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -15,6 +20,19 @@
     --AccentBright: #0A0A0B;
   }
 } */
+ /* add the code bellow */ 
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+      display: none;
+  }
+ /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+}
+}
+
 
 body {
   color: var(--AccentDark);

@@ -12,6 +12,7 @@ const config: Config = {
       colors: {
         AccentDark: "var(--AccentDark)",
         AccentBright: "var(--AccentBright)",
+        AccentOrganicGray: "var(--AccentOrganicGray)",
       },
     },
   },
