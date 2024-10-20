@@ -24,17 +24,46 @@ export const Services = () => {
     useEffect(() => { console.log(scaleX) }, [scaleX]);
 
     return <div id="Services" className="flex flex-col gap-0 md:gap-20 items-center justify-center py-24 md:py-32 2xl:py-40 bg-AccentOrganicGray">
-        <h1 className="text-3xl sm:text-4xl md:text-6xl font-medium text-AccentBright text-center max-w-[945px] px-6 md:px-20">
+        <motion.h1
+            initial={{
+                opacity: 0, y: 300
+            }}
+            whileInView={{
+                opacity: 1, y: 0
+            }}
+            transition={{
+                duration: 1,
+                ease: 'easeInOut'
+            }}
+            viewport={{
+                once: true
+            }}
+            className="text-3xl sm:text-4xl md:text-6xl font-medium text-AccentBright text-center max-w-[945px] px-6 md:px-20">
             We offer a comprehensive range of services to meet all your design and construction needs.
-        </h1>
-        <div ref={ref} className="flex flex-row items-start justify-start p-20 w-full overflow-y-auto max-w-full no-scrollbar">
+        </motion.h1>
+        <div ref={ref} className="flex flex-row items-start justify-start p-20 w-full overflow-y-hidden overflow-x-auto max-w-full no-scrollbar">
             <div className="flex flex-row items-start justify-start gap-12 md:gap-28 md:mx-16 xl:mx-40 w-fit">
                 {Services.map(({ id, name, description }, idx) =>
-                    <div key={idx} className="flex flex-col items-start justify-start gap-4 min-w-[80vw] md:min-w-[475px]">
+                    <motion.div
+                        initial={{
+                            opacity: 0, y: 100
+                        }}
+                        whileInView={{
+                            opacity: 1, y: 0
+                        }}
+                        transition={{
+                            duration: 1,
+                            delay: idx,
+                            ease: 'easeInOut'
+                        }}
+                        viewport={{
+                            once: true
+                        }}
+                        key={idx} className="flex flex-col items-start justify-start gap-4 min-w-[80vw] md:min-w-[475px]">
                         <h3 className="opacity-45 text-AccentBright text-3xl md:text-5xl font-medium">{id}</h3>
                         <h4 className="text-AccentBright text-xl md:text-2xl xl:text-3xl font-semibold">{name}</h4>
                         <p className="opacity-45 text-AccentBright text-lg md:text-xl font-medium leading-[125%]">{description}</p>
-                    </div>)}
+                    </motion.div>)}
             </div>
         </div>
         <div className="flex flex-row items-start w-[400px] max-w-[90vw] md:max-w-[800px] bg-[#00000025]">
