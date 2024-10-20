@@ -45,10 +45,11 @@ export const Hero = ({ className }: HeroProps) => {
                     <span className={`text-base font-medium w-1/4 opacity-65`}>{(current + 1).toString().padStart(2, '0')} / {(list.length).toString().padStart(2, '0')}</span>
                     <AnimatePresence mode="popLayout">
                         <motion.p
+                            layout
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            className="text-2xl w-3/4">
+                            className="text-xl md:text-2xl w-3/4">
                             {list[current]}
                         </motion.p>
                     </AnimatePresence>
@@ -56,12 +57,12 @@ export const Hero = ({ className }: HeroProps) => {
 
             </div>
         }
-    return <div className={"relative flex flex-col justify-between gap-44 min-h-[90vh] p-12 " + className}>
+    return <div id="Hero" className={"relative flex flex-col justify-between gap-16 min-h-[90vh] px-6 md:px-12 py-6 overflow-hidden " + className}>
         <HeroImage />
         <Nav className="absolute top-0 left-0 w-full" />
         <span></span>
         <div className="flex flex-col gap-4 !z-10 max-w-3xl">
-            <h1 className="text-7xl font-bold uppercase text-white">
+            <h1 className="text-5xl md:text-7xl font-bold uppercase text-white">
                 One Step Away
                 from Exceptional Design.</h1>
             <p className="text-base font-normal text-white">

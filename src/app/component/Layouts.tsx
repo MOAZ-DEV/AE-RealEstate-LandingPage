@@ -36,7 +36,7 @@ export const Nav = ({ className, ...props }: NavProps) => {
             { label: 'Archive', href: '/#Archive' },
             { label: 'Services', href: '/#Services' }
         ], Menu = () =>
-            <div className='flex flex-row items-center gap-6 ml-auto font-semibold'>
+            <div className='hidden md:flex flex-row items-center gap-6 ml-auto font-semibold'>
                 {menuList.map(({ label, href }) => <Link
                     className='opacity-35 hover:opacity-95 duration-150 relative after:absolute after:-bottom-[2px] after:left-0 after:h-[2px] after:w-0 after:bg-AccentDark after:rounded-full hover:after:w-full after:transition-all'
                     key={label} href={href}>
@@ -44,7 +44,7 @@ export const Nav = ({ className, ...props }: NavProps) => {
                 </Link>)}
             </div>;
 
-    return <nav className={"flex flex-row items-center justify-between gap-16 w-full py-4 px-12 " + className} {...props}>
+    return <nav className={"flex flex-row items-center justify-between gap-16 w-full py-4 px-6 md:px-12 " + className} {...props}>
         <Image src={LogoSvg} alt={'Memar Logo'} />
         <Menu />
         <Button size='medium' variant='secondary'>Let’s Talk!</Button>
@@ -58,10 +58,10 @@ interface FooterProps extends ComponentProps<'footer'> {
 
 export const Footer = ({ className, ...props }: FooterProps) => {
 
-    return <footer className={"flex flex-col items-center justify-between w-full py-4 px-12 text-center bg-AccentDark text-AccentBright " + className} {...props}>
-        <div className='flex flex-row items-start justify-between py-20 w-full'>
+    return <footer className={"flex flex-col items-center justify-between w-full py-4 px-6 md:px-12 text-center bg-AccentDark text-AccentBright " + className} {...props}>
+        <div className='flex flex-col xl:flex-row items-start justify-between max-xl:gap-16 py-12 xl:py-20 w-full'>
             <div className='flex flex-col gap-12 items-start'>
-                <h1 className='text-5xl font-medium *:opacity-45 max-w-[775px] text-left'>
+                <h1 className='text-3xl sm:text-4xl md:text-5xl font-medium *:opacity-45 max-w-[775px] text-left'>
                     <span>We are</span> ready to collaborate. Drop us a Line, <span>or simply have a chat.</span></h1>
                 <Button size='medium' variant='primary'>
                     Get Started
@@ -84,7 +84,7 @@ export const Footer = ({ className, ...props }: FooterProps) => {
                     <Link href='/' className='opacity-45 underline text-xl font-semibold'>
                         Fifth District, New Cairo, Egypt</Link>
                 </div>
-                <div className='flex flex-row gap-12'>
+                <div className='flex flex-col sm:flex-row gap-12'>
                     <div className='flex flex-col gap-1 items-start'>
                         <p className='text-base font-semibold'>Email</p>
                         <Link href='/' className='opacity-45 underline text-xl font-semibold'>
@@ -103,12 +103,14 @@ export const Footer = ({ className, ...props }: FooterProps) => {
                 </div>
             </div>
         </div>
-        <div className='flex flex-row items-center justify-between w-full'>
-            <p className='opacity-45 text-sm font-semibold'>
+        <div className='flex flex-row items-center justify-between gap-4 w-full'>
+            <p className='opacity-45 text-sm font-semibold text-left'>
                 Nuvelti Design Studio © 2019 - 2024. Design By MA-Designs.</p>
+            <Link href={'/#Hero'}>
             <Button className='border border-white rounded-full bg-AccentDark p-4 aspect-square hover:scale-110 hover:invert transition-all'>
                 <Image src={ArrowTopSvg} alt='Go Top.' />
             </Button>
+            </Link>
         </div>
     </footer>;
 }

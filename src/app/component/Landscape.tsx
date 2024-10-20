@@ -55,10 +55,20 @@ export const Landscape = () => {
     }, [imagesList]);
 
     return (
-        <div id="Landscape" className="relative flex flex-col items-center py-40">
+        <div id="Landscape" className="relative flex flex-col items-center py-24 md:py-32 2xl:py-40 h-fit">
             <span className="absolute top-0 left-0 h-full w-screen max-w-full z-[1] bg-gradient-to-t from-AccentBright via-transparent to-transparent"></span>
             <motion.div
-                className="absolute top-0 left-0 h-full w-screen z-[0] brightness-75 object-cover pointer-events-none transition-[background]"
+            initial={{
+                scale: 1.1
+            }}
+            whileInView={{
+                scale: 1
+            }}
+            viewport={{ once: true}}
+            transition={{
+                duration: 2
+            }}
+                className="absolute top-0 left-0 h-full w-screen z-[0] brightness-75 object-cover pointer-events-none"
                 animate={{
                     background: `url(${imagesList[1].url})`,
                     backgroundSize: "cover",
@@ -66,9 +76,9 @@ export const Landscape = () => {
                 }} />
 
             <div className="flex flex-col items-center gap-16 z-10 w-full">
-                <h1 className="text-6xl font-medium text-AccentBright">
+                <h1 className="text-4xl md:text-6xl font-medium text-AccentBright px-11">
                     Build your dream Landscape.</h1>
-                <motion.div className="flex flex-row gap-x-40 items-center justify-center w-full">
+                <motion.div className="flex flex-row 3xl:gap-x-40 items-center justify-center w-full">
                     {imagesList.map(({ url, value }, idx) => (
                         <motion.div
                             layout
@@ -76,7 +86,7 @@ export const Landscape = () => {
                             initial={{ scale: 0.6 }}
                             animate={{ scale: idx === 1 ? 1 : 0.8 }}
                             exit={{ scale: 0.6 }}
-                            className="flex items-center justify-center rounded-xl overflow-hidden shadow-md h-[600px] min-w-fit object-cover aspect-video"
+                            className="flex items-center justify-center rounded-xl overflow-hidden shadow-md h-[165px] md:h-[400px] xl:h-[600px] min-w-fit object-cover aspect-video"
                             style={{
                                 backgroundImage: `url(${url})`,
                                 backgroundSize: "cover",
